@@ -12,17 +12,4 @@ import java.util.List;
 
 @SpringBootTest(classes = CarrosApiApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class CarrosApiApplicationTests {
-
-    @Autowired
-    private TestRestTemplate rest;
-
-    public ResponseEntity<Carro> getCarro(String url) {
-        return rest.getForEntity(url, Carro.class);
-    }
-
-    public ResponseEntity<List<Carro>> findAll(String url) {
-        return rest.exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference<List<Carro>>() {
-        });
-    }
-
 }
